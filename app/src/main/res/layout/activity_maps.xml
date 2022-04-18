@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Chris McCauley
+    S2130816
+    Mobile Platform Development
+-->
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/vwFlip"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:text="Map Screen"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/screen1Label"
+            />
+        <ProgressBar
+            android:id="@+id/determinateBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:progressBackgroundTint="@color/white"
+            android:progressTint="@color/teal_200"
+            android:progress="0"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go To Map Options Screen"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:id="@+id/screen1Button"
+            />
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            tools:context="myandroidstuff.me.org.mapflipperexample.MapsFlipperActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:text="Map Options Screen"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/screen2Label"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select the map Type"
+            android:layout_gravity="center"
+            />
+
+        <RadioGroup
+            android:id="@+id/mapTypeGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <RadioButton
+                android:text="Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/normalViewRadio"
+                />
+            <RadioButton
+                android:text="Terrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/terrainViewRadio"
+                />
+            <RadioButton
+                android:text="Satellite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/satelliteViewRadio"
+                />
+            <RadioButton
+                android:text="Hybrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hybridViewRadio"
+                />
+
+        </RadioGroup>
+        <CheckBox
+            android:id="@+id/panZoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Pan/Zoom"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dip"
+            android:text="Get information on all upcoming roadworks"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="All Roadworks"
+            android:layout_gravity="center"
+            android:id="@+id/screen2RoadWorksButton"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dip"
+            android:text="Search for roadworks on a specific date"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Date Specific Roadworks"
+            android:layout_gravity="center"
+            android:id="@+id/screen2DateSpecificRoadWorksButton"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dip"
+            android:text="Search for roadworks on a specific road"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Road Specific Roadworks"
+            android:layout_gravity="center"
+            android:id="@+id/screen2RoadSpecificRoadWorksButton"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dip"
+            android:text="Be aware of roadworks in advance of your journey"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Journey Planner"
+            android:layout_gravity="center"
+            android:id="@+id/screen2JourneyPlannerButton"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dip"
+            android:text="Return to map screen"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Go to Map Screen"
+            android:layout_gravity="center"
+            android:id="@+id/screen2Button"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Return"
+            android:layout_gravity="center"
+            android:id="@+id/screen3BackButton"
+            />
+
+        <ListView
+            android:id="@+id/roadwork_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Return"
+            android:layout_gravity="center"
+            android:id="@+id/screen4BackButton"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Please Enter a Date: ">
+        </TextView>
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker"
+            android:layout_gravity="center"
+            android:datePickerMode="calendar">
+        </DatePicker>
+        <Button
+            android:id="@+id/datePickerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:text="Search For Roadworks on This Date">
+        </Button>
+
+        <ListView
+            android:id="@+id/roadwork_date_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Return"
+            android:layout_gravity="center"
+            android:id="@+id/screen5BackButton"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Please Enter a Road Name: ">
+        </TextView>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/roadSearchEditText">
+        </EditText>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search For Roadworks on This Road"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:id="@+id/roadSearchButton">
+        </Button>
+        <ListView
+            android:id="@+id/roadwork_road_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Return"
+            android:layout_gravity="center"
+            android:id="@+id/screen6BackButton"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:text="Please Enter The Date of Your Journey: ">
+        </TextView>
+
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePickerJourneyPlanner"
+            android:layout_gravity="center"
+            android:datePickerMode="calendar">
+        </DatePicker>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Search For Roadworks on This Date"
+            android:id="@+id/buttonJourneyPlanner">
+        </Button>
+
+        <ListView
+            android:id="@+id/roadwork_journey_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:text="Return"
+            android:layout_gravity="center"
+            android:id="@+id/screen7BackButton"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Road: ">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:id="@+id/textViewTitle">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Description: ">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:id="@+id/textViewDescription">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Start Date: ">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:id="@+id/textViewStartDate">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="End Date: ">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:id="@+id/textViewEndDate">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Latitude: ">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:id="@+id/textLatitude">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Longitude: ">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:id="@+id/textViewLongitude">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Date Published: ">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:id="@+id/textViewPubDate">
+            </TextView>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/white"
+            android:id="@+id/markMapButton"
+            android:text="Mark on Map">
+
+        </Button>
+
+    </LinearLayout>
+
+</ViewFlipper>
